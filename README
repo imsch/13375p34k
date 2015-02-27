@@ -3,3 +3,6 @@ Leetspeak translat0r
 v0.5
 Alle Ausgaben in der Konsole.
 Zum Übersetzen einfach den Wert von String alph durch gewünschten Text ersetzen
+
+v0.6
+Mehrere Übersetzungen nacheinander möglich
