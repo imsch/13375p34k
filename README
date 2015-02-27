@@ -8,3 +8,7 @@ Zum Übersetzen einfach den Wert von String alph durch gewünschten Text ersetze
 
 v0.6
 Mehrere Übersetzungen nacheinander möglich
+
+v0.7
+Code kommentiert
+Satzzeichen implementiert (.,:;!?)
