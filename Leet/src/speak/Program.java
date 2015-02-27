@@ -1,33 +1,133 @@
 package speak;
 
 public class Program {
-	
-	private String alph;
-	private String leet;
-	private String [] uebersetzung = new String[26];
-	
-	public void fuellen(){
-		uebersetzung[0]="4";
-		uebersetzung[1]="13";
-		uebersetzung[3]="(";
-		uebersetzung[4]="[)";
-		uebersetzung[5]="3";
-		uebersetzung[6]="|=";
-		uebersetzung[7]="6";
-		uebersetzung[8]="|-|";
-		uebersetzung[9]="|";
-		uebersetzung[10]=".]";
-		uebersetzung[11]="|<";
-		uebersetzung[12]="1";
-		uebersetzung[13]="|y|";
-		uebersetzung[14]="|/|";
-		uebersetzung[15]="0";
-		uebersetzung[16]="|>";
-		uebersetzung[17]="0,";
-		uebersetzung[18]="|2";
-		uebersetzung[19]="5";
-		uebersetzung[20]="7";
-		uebersetzung[21]="|_|";
-		uebersetzung[22]="\/";
+
+	// alle Variablen und Methoden static, da sie nicht in der Main stehen wegen
+	// der Übersicht
+	private static String alph="Hallo mein Name ist Jannis";
+	private static String leet;
+	private static String[][] alphabete = new String[27][2];
+	private static String[] uebersetzung= new String[alph.length()];
+
+	public static void fuellen() { // Array wird befüllt mit dem Lateinischen
+									// Alphabet
+									// und den dazugehörigen 1337 Buchstaben
+		alphabete[0][0] = "4";
+		alphabete[0][1] = "A";
+		// Platzhalter
+		alphabete[1][0] = "13";
+		alphabete[1][1] = "B";
+		//
+		alphabete[2][0] = "(";
+		alphabete[2][1] = "C";
+		//
+		alphabete[3][0] = "[)";
+		alphabete[3][1] = "D";
+		//
+		alphabete[4][0] = "3";
+		alphabete[4][1] = "E";
+		//
+		alphabete[5][0] = "|=";
+		alphabete[5][1] = "F";
+		//
+		alphabete[6][0] = "6";
+		alphabete[6][1] = "G";
+		//
+		alphabete[7][0] = "|-|";
+		alphabete[7][1] = "H";
+		//
+		alphabete[8][0] = "|";
+		alphabete[8][1] = "I";
+		//
+		alphabete[9][0] = ".]";
+		alphabete[9][1] = "J";
+		//
+		alphabete[10][0] = "|<";
+		alphabete[10][1] = "K";
+		//
+		alphabete[11][0] = "1";
+		alphabete[11][1] = "L";
+		//
+		alphabete[12][0] = "|\\/|";
+		alphabete[12][1] = "M";
+		//
+		alphabete[13][0] = "/\\/";
+		alphabete[13][1] = "N";
+		//
+		alphabete[14][0] = "0";
+		alphabete[14][1] = "O";
+		//
+		alphabete[15][0] = "|>";
+		alphabete[15][1] = "P";
+		//
+		alphabete[16][0] = "0,";
+		alphabete[16][1] = "Q";
+		//
+		alphabete[17][0] = "|2";
+		alphabete[17][1] = "R";
+		//
+		alphabete[18][0] = "5";
+		alphabete[18][1] = "S";
+		//
+		alphabete[19][0] = "7";
+		alphabete[19][1] = "T";
+		//
+		alphabete[20][0] = "|_|";
+		alphabete[20][1] = "U";
+		//
+		alphabete[21][0] = "\\/";
+		alphabete[21][1] = "V";
+		//
+		alphabete[22][0] = "\\v/";
+		alphabete[22][1] = "W";
+		//
+		alphabete[23][0] = "}{";
+		alphabete[23][1] = "X";
+		//
+		alphabete[24][0] = "`/";
+		alphabete[24][1] = "Y";
+		//
+		alphabete[25][0] = "2";
+		alphabete[25][1] = "Z";
+		//
+		alphabete[26][0]=" ";
+		alphabete[26][1]=" ";
 	}
+
+	public static void alphabeteAusgeben() {
+		for (int y = 0; y < 2; y++) {
+			for (int x = 0; x < 27; x++) {
+				System.out.print(alphabete[x][y] + " ");
+			}
+			System.out.println();
+		}
+	}
+	public static void uebersetzungAusgeben(){
+		for (int x = 0; x < uebersetzung.length; x++) {
+			System.out.print(uebersetzung[x]+ " ");
+		}
+	}
+	
+	public static void uebersetzen()
+	{
+		alph=alph.toUpperCase();
+		for(int i =0;i<alph.length();i++)
+		{
+			for(int x =0;x<alphabete.length;x++)
+			{
+				if(alphabete[x][1].contains(String.valueOf(alph.charAt(i))))
+				{
+					uebersetzung[i]=alphabete[x][0];
+				}
+			}
+		}
+	}
+
+	public static void main(String[] Args) {
+		fuellen();
+		alphabeteAusgeben();
+		uebersetzen();
+		uebersetzungAusgeben();
+	}
+
 }
